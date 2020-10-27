@@ -27,11 +27,11 @@ int _printf(const char * const format, ...)
 
 	while (format && format[outer])
 	{
-		if (format[inner] == '%')
+		if (format[outer] == '%')
 		{
 			for (inner = 0; arr[inner].x; inner++)
 			{
-				if (format[inner] == arr[outer].x)
+				if (format[outer] == arr[inner].x)
 				{
 					arr[inner].fun(args_list);
 					outer++;
@@ -39,8 +39,8 @@ int _printf(const char * const format, ...)
 			}
 		}
 		else
-			_putchar(format[inner]);
+			_putchar(format[outer]);
+		outer++;
 	}
-	outer++;
 	return (0);
 }
