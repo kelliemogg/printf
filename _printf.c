@@ -15,7 +15,6 @@ int _printf(const char * const format, ...)
 	int outer = 0;
 	int inner = 0;
 	va_list args_list;
-	char *comma = "";
 	print_stuff arr[] = {
 		{'c', char_func},
 		{'f', float_func},
@@ -28,19 +27,20 @@ int _printf(const char * const format, ...)
 
 	while (format && format[outer])
 	{
-		if (format[inner] == %)
+		if (format[inner] == '%')
 		{
-			for (inner == 0; arr[inner]; index++)
+			for (inner = 0; arr[inner].x; inner++)
 			{
 				if (format[inner] == arr[outer].x)
 				{
 					arr[inner].fun(args_list);
 					outer++;
 				}
-				else
-					_putchar(format[inner]);
 			}
 		}
+		else
+			_putchar(format[inner]);
 	}
+	outer++;
 	return (0);
 }
