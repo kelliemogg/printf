@@ -10,7 +10,7 @@
  * description: prints anything and everything
  * Return: void
  */
-void print_all(const char * const format, ...)
+int _printf(const char * const format, ...)
 {
 	int outer = 0;
 	int inner = 0;
@@ -42,4 +42,5 @@ void print_all(const char * const format, ...)
 			}
 		}
 	}
+	return (0);
 }
