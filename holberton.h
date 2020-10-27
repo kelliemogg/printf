@@ -1,5 +1,5 @@
-#ifndef VARIADIC_FUNCTION_H
-#define VARIADIC_FUNCTION_H
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 #include <stdarg.h>
 #include <stdlib.h>
 
@@ -20,4 +20,7 @@ void string_func(va_list args_list);
 void char_func(va_list args_list);
 void int_func(va_list args_list);
 void string_func(va_list args_list);
-#endif /* VARIADIC_FUNCTION_H */
+void float_func(va_list args_list);
+int _putchar(char c);
+
+#endif /* HOLBERTON_H */
