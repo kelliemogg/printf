@@ -43,3 +43,26 @@ void string_func(va_list args_list)
 	}
 	print_string(string);
 }
+
+/**
+ * rev_string - reverse that string
+ * description: reverse it
+ * @s: variable
+ * Return: 0
+ */
+
+void rev_string(char *s)
+{
+	int x;
+	int y;
+	int z = (_strlen(s) - 1);
+
+	for (y = 0, x = z; y < x; y++, x--)
+	{
+		int z = s[y];
+
+		s[y] = s[x];
+		s[x] = z;
+	}
+	print_string(s);
+}
