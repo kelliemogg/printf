@@ -41,6 +41,7 @@ void format_func(char z, va_list args_list)
  */
 int _printf(const char * const format, ...)
 {
+	int counter = 0;
 	int outer = 0;
 	va_list args_list;
 
@@ -54,11 +55,16 @@ int _printf(const char * const format, ...)
 			{
 				outer++;
 				format_func(format[outer], args_list);
+				counter++;
 			}
 		}
 		else
+		{
+			counter++;
 			_putchar(format[outer]);
+		}
 		outer++;
 	}
-	return (0);
+	va_end(args_list);
+	return (counter);
 }
