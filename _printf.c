@@ -12,13 +12,13 @@
  * Return: void
  */
 
-void format_func(char z, va_list args_list)
+int format_func(char z, va_list args_list)
 {
 	int inner;
 
 	print_stuff arr[] = {
 		{'c', char_func},
-		{'f', float_func},
+		{'d', int_func},
 		{'i', int_func},
 		{'s', string_func},
 		{'r', rev_string},
@@ -29,9 +29,10 @@ void format_func(char z, va_list args_list)
 	{
 		if (arr[inner].x == z)
 		{
-			arr[inner].fun(args_list);
+			return (arr[inner].fun(args_list));
 		}
 	}
+	return (0);
 }
 
 /**
@@ -46,24 +47,38 @@ int _printf(const char * const format, ...)
 	int outer = 0;
 	va_list args_list;
 
+	if (format == NULL)
+		return (-1);
 	va_start(args_list, format);
 
 	while (format && format[outer])
 	{
-		if (format[outer] == '%' && format[outer + 1] != '%')
+		if (format[outer] != '%')
 		{
-			if (format[outer - 1] != '%')
+			_putchar(format[outer]);
+			counter++;
+		}
+		if (format[outer] == '%' && format[outer + 1] == '%')
+		{
+			outer++;
+			counter += _putchar(format[outer]);
+		}
+		else if (format[outer] == '%' && format[outer + 1] != '%')
+		{
+			outer++;
+			counter += format_func(format[outer], args_list);
+			/* if (format[outer - 1] != '%')
 			{
 				outer++;
 				format_func(format[outer], args_list);
 				counter++;
-			}
+				}*/
 		}
-		else
+		/* else
 		{
 			counter++;
 			_putchar(format[outer]);
-		}
+			}*/
 		outer++;
 	}
 	va_end(args_list);

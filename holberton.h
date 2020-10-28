@@ -12,17 +12,15 @@
 typedef struct print_stuff
 {
 	char x;
-	void (*fun)();
+	int (*fun)();
 } print_stuff;
 
 int _printf(const char * const format, ...);
-void rev_string(char *s);
-void format_func(char z, va_list args_list);
-void string_func(va_list args_list);
-void char_func(va_list args_list);
-void int_func(va_list args_list);
-void string_func(va_list args_list);
-void float_func(va_list args_list);
+int rev_string(char *s);
+int format_func(char z, va_list args_list);
+int string_func(va_list args_list);
+int char_func(va_list args_list);
+int int_func(va_list args_list);
 int _putchar(char c);
 int _strlen(char *s);
 int print_string(char *str);

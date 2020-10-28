@@ -49,9 +49,9 @@ int print_string(char *str)
  * @args_list: argument list
  * Return: void
  */
-void char_func(va_list args_list)
+int char_func(va_list args_list)
 {
-	print_char(va_arg(args_list, int));
+	return (print_char(va_arg(args_list, int)));
 }
 
 /**
