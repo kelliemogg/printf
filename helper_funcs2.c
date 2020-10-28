@@ -23,7 +23,7 @@ void float_func(va_list args_list)
 
 void int_func(va_list args_list)
 {
-	printf("%i", va_arg(args_list, int));
+	print_char(va_arg(args_list, double));
 }
 
 /**
