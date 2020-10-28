@@ -16,6 +16,7 @@ typedef struct print_stuff
 } print_stuff;
 
 int _printf(const char * const format, ...);
+void format_func(char z, va_list args_list);
 void string_func(va_list args_list);
 void char_func(va_list args_list);
 void int_func(va_list args_list);
