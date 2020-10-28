@@ -13,17 +13,17 @@
  */
 void float_func(va_list args_list)
 {
-        print_char(va_arg(args_list, double));
+	print_char(va_arg(args_list, double));
 }
 /**
- * inf_func - prints float number
+ * int_func - prints float number
  * @args_list: arg list
  * Return: void
  */
 
 void int_func(va_list args_list)
 {
-        printf("%i", va_arg(args_list, int));
+	printf("%i", va_arg(args_list, int));
 }
 
 /**
@@ -33,13 +33,13 @@ void int_func(va_list args_list)
  */
 void string_func(va_list args_list)
 {
-        char *string;
+	char *string;
 
-        string = va_arg(args_list, char *);
+	string = va_arg(args_list, char *);
 
-        if (!string)
-        {
-                string = "(nil)";
-        }
-        print_string(string);
+	if (!string)
+	{
+		string = "(nil)";
+	}
+	print_string(string);
 }
