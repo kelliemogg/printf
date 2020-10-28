@@ -4,26 +4,15 @@
 #include <stdio.h>
 #include <stddef.h>
 
-
-/**
- * float_func - float
- * description: float fun
- * @args_list: arg passed
- * Return: void
- */
-void float_func(va_list args_list)
-{
-	print_char(va_arg(args_list, double));
-}
 /**
  * int_func - prints float number
  * @args_list: arg list
  * Return: void
  */
 
-void int_func(va_list args_list)
+int int_func(va_list args_list)
 {
-	print_char(va_arg(args_list, double));
+	return (print_char(va_arg(args_list, int)));
 }
 
 /**
@@ -31,7 +20,7 @@ void int_func(va_list args_list)
  * @args_list: args list
  * Return: void
  */
-void string_func(va_list args_list)
+int string_func(va_list args_list)
 {
 	char *string;
 
@@ -39,9 +28,9 @@ void string_func(va_list args_list)
 
 	if (!string)
 	{
-		string = "(nil)";
+		string = "(null)";
 	}
-	print_string(string);
+	return (print_string(string));
 }
 
 /**
@@ -51,7 +40,7 @@ void string_func(va_list args_list)
  * Return: 0
  */
 
-void rev_string(char *s)
+int rev_string(char *s)
 {
 	int x;
 	int y;
@@ -64,5 +53,5 @@ void rev_string(char *s)
 		s[y] = s[x];
 		s[x] = z;
 	}
-	print_string(s);
+	return (print_string(s));
 }
