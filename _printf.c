@@ -18,7 +18,7 @@ void format_func(char z, va_list args_list)
 
 	print_stuff arr[] = {
 		{'c', char_func},
-                {'f', float_func},
+		{'f', float_func},
 		{'i', int_func},
 		{'s', string_func},
 		{'\0', NULL}
@@ -26,7 +26,7 @@ void format_func(char z, va_list args_list)
 
 	for (inner = 0; arr[inner].x; inner++)
 	{
-		if(arr[inner].x == z)
+		if (arr[inner].x == z)
 		{
 			arr[inner].fun(args_list);
 		}
@@ -34,7 +34,7 @@ void format_func(char z, va_list args_list)
 }
 
 /**
- * print_all - const char * const format
+ * _printf - const char * const format
  * @format: list of data types passed in as args
  * description: prints anything and everything
  * Return: void

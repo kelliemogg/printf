@@ -15,6 +15,7 @@
 int _strlen(char *s)
 {
 	int charCount = 0;
+
 	while (s[charCount])
 	{
 		charCount++;
@@ -22,9 +23,9 @@ int _strlen(char *s)
 	return (charCount);
 }
 /**
- * _putchar - writes the character c to stdout
+ * print_char - writes the character c to stdout
  * @c: The character to print
- *
+ * description: print char
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
@@ -36,11 +37,11 @@ int print_char(char c)
  * print_string - takes char *str string as argument
  * @str: string to be printed
  * description: writes char *str to stdout
- * return: 1 on success, -1 on error and errno set appropriately
+ * Return: 1 on success, -1 on error and errno set appropriately
  */
 int print_string(char *str)
 {
-	return(write(1, str, _strlen(str)));
+	return (write(1, str, _strlen(str)));
 }
 
 /**

@@ -23,5 +23,8 @@ void int_func(va_list args_list);
 void string_func(va_list args_list);
 void float_func(va_list args_list);
 int _putchar(char c);
+int _strlen(char *s);
+int print_string(char *str);
+int print_char(char c);
 
 #endif /* HOLBERTON_H */
