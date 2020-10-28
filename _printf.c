@@ -21,6 +21,7 @@ void format_func(char z, va_list args_list)
 		{'f', float_func},
 		{'i', int_func},
 		{'s', string_func},
+		{'r', rev_string},
 		{'\0', NULL}
 	};
 
