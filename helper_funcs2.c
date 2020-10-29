@@ -2,23 +2,47 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
-#include <stddef.h>
-
 /**
  * int_func - prints float number
  * @args_list: arg list
  * Return: void
  */
-
 int int_func(va_list args_list)
 {
-	return (print_char(va_arg(args_list, int)));
-}
+	int num = va_arg(args_list, int);
+	char swap;
+	int buff;
+	char c_hold;
 
+	if (num < 0)
+	{
+		_putchar ('-');
+		swap = ('0' - (num % 10));
+		num /= -10;
+	}
+	else
+	{
+		swap = ((num % 10) + '0');
+		num /= 10;
+	}
+	buff = 0;
+	while (num > 0)
+	{
+		buff = buff * 10 + (num % 10);
+		num /= 10;
+	}
+	while (buff > 0)
+	{
+		c_hold = ((buff % 10) + '0');
+		_putchar(c_hold);
+		buff /= 10;
+	}
+	return (print_char(swap));
+}
 /**
  * string_func - string
  * @args_list: args list
- * Return: void
+ * Return: num of bytes
  */
 int string_func(va_list args_list)
 {
@@ -32,14 +56,12 @@ int string_func(va_list args_list)
 	}
 	return (print_string(string));
 }
-
 /**
  * rev_string - reverse that string
  * description: reverse it
  * @s: variable
  * Return: 0
  */
-
 int rev_string(char *s)
 {
 	int x;
