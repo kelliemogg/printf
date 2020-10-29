@@ -67,18 +67,21 @@ int _printf(const char * const format, ...)
 		{
 			outer++;
 			counter += format_func(format[outer], args_list);
-			/* if (format[outer - 1] != '%')
-			{
-				outer++;
-				format_func(format[outer], args_list);
-				counter++;
-				}*/
 		}
-		/* else
-		{
-			counter++;
-			_putchar(format[outer]);
-			}*/
+
+/**	if (format[outer - 1] != '%')
+ *			{
+ *				outer++;
+ *				format_func(format[outer], args_list);
+ *				counter++;
+ *				}
+ *		}
+ *		 else
+ *		{
+ *			counter++;
+ *			_putchar(format[outer]);
+ *
+ */
 		outer++;
 	}
 	va_end(args_list);
