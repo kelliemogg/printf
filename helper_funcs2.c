@@ -13,10 +13,11 @@ int int_func(va_list args_list)
 	char swap;
 	int buff;
 	char c_hold;
+	int count = 0;
 
 	if (num < 0)
 	{
-		_putchar ('-');
+		count += _putchar ('-');
 		swap = ('0' - (num % 10));
 		num /= -10;
 	}
@@ -34,10 +35,10 @@ int int_func(va_list args_list)
 	while (buff > 0)
 	{
 		c_hold = ((buff % 10) + '0');
-		_putchar(c_hold);
+		count += _putchar(c_hold);
 		buff /= 10;
 	}
-	return (print_char(swap));
+	return (count += print_char(swap));
 }
 /**
  * string_func - string
